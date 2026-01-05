@@ -1,0 +1,94 @@
+# ===================
+# General
+# ===================
+.DS_Store
+*.swp
+*.swo
+*~
+.directory
+
+# ===================
+# Backups
+# ===================
+*.bak
+*.bak.*
+*.backup
+*.orig
+
+# ===================
+# Lock files
+# ===================
+*-wal
+*-journal
+*.lock-*
+code.lock
+
+# ===================
+# Cache directories
+# ===================
+.cache/
+node_modules/
+__pycache__/
+*.pyc
+
+# ===================
+# History & Logs
+# ===================
+*.log
+History/
+.bash_history
+.zsh_history
+fish_history
+
+# ===================
+# Session data
+# ===================
+Session Storage/
+globalStorage/
+workspaceStorage/
+Partitions/
+
+# ===================
+# Binary & Large files
+# ===================
+*.ttf
+*.otf
+*.woff
+*.woff2
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.ico
+
+# ===================
+# OS specific
+# ===================
+.Trash-*
+.nfs*
+Thumbs.db
+
+# ===================
+# Cursor/VSCode specific
+# ===================
+Cursor/Partitions/
+Cursor/*-wal
+Cursor/DIPS*
+Cursor/Network*
+Cursor/SharedStorage*
+Cursor/TransportSecurity
+Cursor/Cookies*
+Cursor/Preferences
+*.crashDump
+
+# ===================
+# Neovim specific
+# ===================
+nvim/.config/nvim/.luarc.json
+nvim/.config/nvim/lazy-lock.json
+
+# ===================
+# Sensitive files (excluded by user request)
+# ===================
+git/
+.gitconfig

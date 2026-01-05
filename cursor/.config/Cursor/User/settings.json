@@ -1,0 +1,29 @@
+{
+    "workbench.colorTheme": "Flexoki Dark",
+    "window.commandCenter": true,
+    "cursor.cpp.enablePartialAccepts": true,
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "terminal.explorerKind": "both",
+    "terminal.external.linuxExec": "ghosty",
+    "files.associations": {
+        "*.css": "tailwindcss"
+    },
+    "git.autofetch": true,
+    "workbench.sideBar.location": "right",
+    "cursor.composer.shouldChimeAfterChatFinishes": true,
+    "cursor.terminal.usePreviewBox": true,
+    "files.autoSave": "onFocusChange",
+    "editor.fontSize": 16,
+    "editor.cursorStyle": "block",
+    "cursor.composer.shouldShowMarkdownHoverParticipantActions2": true,
+    "cursor.composer.cmdPFilePicker2": true,
+    "cursor.composer.collapsePaneInputBoxPills": true,
+    "cursor.composer.textSizeScale": 1.15,
+    "cursor.general.gitGraphIndexing": "enabled",
+    "editor.fontFamily": "'Monaspace Neon', monospace",
+    "editor.inlineSuggest.fontFamily": "'Monaspace Krypton', monospace",
+    "jest.nodeEnv": {
+        "PATH": "/home/simoncrypta/.local/share/mise/installs/node/20.18.0/bin:${env:PATH}"
+    },
+    "jest.jestCommandLine": "node_modules/.bin/jest"
+}
