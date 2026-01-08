@@ -10,7 +10,8 @@ This repository contains my custom configurations for:
 - **Ghostty** - Terminal emulator
 - **Neovim** - Text editor (LazyVim based)
 - **Cursor** - AI-powered code editor
-- **Omarchy** - Custom themes and configurations
+
+> **Note**: Omarchy themes and system configs (`~/.config/omarchy/`) are managed by Omarchy itself and are intentionally excluded from this repository.
 
 ## Installation
 
@@ -38,13 +39,12 @@ cp -r ~/.config/waybar ~/.config-backup/ 2>/dev/null
 cp -r ~/.config/ghostty ~/.config-backup/ 2>/dev/null
 cp -r ~/.config/nvim ~/.config-backup/ 2>/dev/null
 cp -r ~/.config/Cursor ~/.config-backup/ 2>/dev/null
-cp -r ~/.config/omarchy ~/.config-backup/ 2>/dev/null
 
 # Remove existing configs (required for stow to create symlinks)
-rm -rf ~/.config/hypr ~/.config/waybar ~/.config/ghostty ~/.config/nvim ~/.config/Cursor/User ~/.config/omarchy
+rm -rf ~/.config/hypr ~/.config/waybar ~/.config/ghostty ~/.config/nvim ~/.config/Cursor/User
 
 # Install all configurations
-stow -t ~ hypr waybar ghostty nvim cursor omarchy
+stow -t ~ hypr waybar ghostty nvim cursor
 
 # Or install individual modules
 stow -t ~ hypr
@@ -52,7 +52,6 @@ stow -t ~ waybar
 stow -t ~ ghostty
 stow -t ~ nvim
 stow -t ~ cursor
-stow -t ~ omarchy
 ```
 
 ## Module Structure
@@ -84,16 +83,11 @@ Each application has its own module following the stow convention:
 │       ├── init.lua
 │       ├── lua/
 │       └── ...
-├── cursor/                  # Cursor editor
-│   └── .config/Cursor/
-│       └── User/
-│           ├── settings.json
-│           └── keybindings.json
-└── omarchy/                 # Omarchy customizations
-    └── .config/omarchy/
-        ├── themes/
-        ├── hooks/
-        └── branding/
+└── cursor/                  # Cursor editor
+    └── .config/Cursor/
+        └── User/
+            ├── settings.json
+            └── keybindings.json
 ```
 
 ## Usage
@@ -139,7 +133,7 @@ cd ~/dotfiles
 stow -D -t ~ hypr
 
 # Remove all modules
-stow -D -t ~ hypr waybar ghostty nvim cursor omarchy
+stow -D -t ~ hypr waybar ghostty nvim cursor
 ```
 
 ### Reinstall/Refresh Symlinks
@@ -148,7 +142,7 @@ stow -D -t ~ hypr waybar ghostty nvim cursor omarchy
 cd ~/dotfiles
 
 # Restow (remove and reinstall)
-stow -R -t ~ hypr waybar ghostty nvim cursor omarchy
+stow -R -t ~ hypr waybar ghostty nvim cursor
 ```
 
 ## Omarchy Compatibility
@@ -158,6 +152,7 @@ This setup works seamlessly with Omarchy:
 1. **Your configs override Omarchy defaults** — Files in `~/.config/` take precedence over `~/.local/share/omarchy/`
 2. **Easy to merge updates** — After Omarchy updates, review changes and selectively merge
 3. **No conflicts** — Your custom configs are managed separately from Omarchy's system files
+4. **Themes stay untouched** — Omarchy themes live in `~/.local/share/omarchy/themes/` and are symlinked to `~/.config/omarchy/themes/` by Omarchy itself
 
 ### Workflow for Omarchy Updates
 
@@ -235,13 +230,13 @@ stow -n -t ~ *  # Dry run shows what would be symlinked
 
 ```bash
 # Install all modules
-cd ~/dotfiles && stow -t ~ hypr waybar ghostty nvim cursor omarchy
+cd ~/dotfiles && stow -t ~ hypr waybar ghostty nvim cursor
 
 # Remove all modules  
-cd ~/dotfiles && stow -D -t ~ hypr waybar ghostty nvim cursor omarchy
+cd ~/dotfiles && stow -D -t ~ hypr waybar ghostty nvim cursor
 
 # Reinstall all modules
-cd ~/dotfiles && stow -R -t ~ hypr waybar ghostty nvim cursor omarchy
+cd ~/dotfiles && stow -R -t ~ hypr waybar ghostty nvim cursor
 
 # Dry run (see what would happen)
 cd ~/dotfiles && stow -n -t ~ *

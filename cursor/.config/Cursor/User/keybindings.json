@@ -1,7 +1,22 @@
 // Place your key bindings in this file to override the defaults
 [
-    {
-        "key": "ctrl+i",
-        "command": "composerMode.agent"
-    }
+  {
+    "key": "ctrl+shift+t",
+    "command": "-workbench.action.reopenClosedEditor"
+  },
+  {
+    "key": "ctrl+shift+t",
+    "command": "workbench.action.terminal.openNativeConsole",
+    "when": "!terminalFocus"
+  },
+  {
+    "key": "ctrl+shift+c",
+    "command": "-workbench.action.terminal.openNativeConsole",
+    "when": "!terminalFocus"
+  },
+  {
+    "key": "ctrl+shift+c",
+    "command": "workbench.scm.action.openReviewChangesPane",
+    "when": "view == 'workbench.scm' && scmRepositoryCount != '0'"
+  }
 ]

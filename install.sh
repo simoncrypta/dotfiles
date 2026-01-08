@@ -29,7 +29,7 @@ echo -e "${YELLOW}Working directory: $DOTFILES_DIR${NC}"
 echo ""
 
 # Define modules
-MODULES=(hypr waybar ghostty nvim cursor omarchy)
+MODULES=(hypr waybar ghostty nvim cursor)
 
 # Function to backup existing config
 backup_config() {
